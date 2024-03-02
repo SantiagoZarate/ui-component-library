@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { TextInput } from ".";
-import { SendIcon } from "@icon";
+import { DeleteAllIcon, SendIcon } from "@icon";
 
 export default {
   component: TextInput.Root,
@@ -13,6 +13,9 @@ export default {
           <SendIcon />
         </TextInput.Icon>
         <TextInput.Input placeholder="testing my design system" />,
+        <TextInput.Icon>
+          <DeleteAllIcon />
+        </TextInput.Icon>
       </>
     ),
   },

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { TextInput } from ".";
-import { SendIcon } from "../icons";
+import { SendIcon } from "@icon";
 
 export default {
   component: TextInput.Root,

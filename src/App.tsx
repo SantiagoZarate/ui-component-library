@@ -1,3 +1,9 @@
+import { SendIcon } from "@icon";
+
 export function App() {
-  return <div></div>;
+  return (
+    <div>
+      <SendIcon />
+    </div>
+  );
 }

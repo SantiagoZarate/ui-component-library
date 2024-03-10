@@ -16,7 +16,11 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
-  viteFinal: async (config) => {
+  viteFinal: async (config, { configType }) => {
+    if (configType === "PRODUCTION") {
+      config.base = "/ui-component-library/";
+    }
+
     config.plugins!.push(
       tsconfigPaths({
         projects: [path.resolve(path.dirname(__dirname), ".", "tsconfig.json")],

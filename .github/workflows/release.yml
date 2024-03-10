@@ -1,5 +1,5 @@
 name: Build and Publish storybook to GitHub Pages
-run-name: ${{ github.actor }} is testing the ui library 🧪
+run-name: ${{ github.actor }} is deploying to gh pages! 🚀
 on:
   push:
     branches:
@@ -19,10 +19,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-      - name: Enable corepack so pnpm is able to use
-        run: corepack enable
       - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
         with:
-          install_command: pnpm install
-          build_command: pnpm build-storybook
+          install_command: npm ci
+          build_command: npm run build-storybook
           path: storybook-static

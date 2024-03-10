@@ -1,5 +1,5 @@
 name: Automated test of the ui library
-run-name: ${{ github.actor }} is deploying to gh pages! 🚀
+run-name: ${{ github.actor }} is testing the ui library 🧪
 on:
   push:
     branches:

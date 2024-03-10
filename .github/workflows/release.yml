@@ -22,6 +22,8 @@ jobs:
           node-version: 18
       - name: Enable pnpm
         run: corepack enable
+      - name: install packages
+        run: pnpm i
       - name: build storybook
         run: pnpm build-storybook
       - name: Setup Pages

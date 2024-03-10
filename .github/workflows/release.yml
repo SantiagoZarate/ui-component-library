@@ -1,6 +1,7 @@
 name: Build and Publish storybook to GitHub Pages
 run-name: ${{ github.actor }} is deploying to gh pages! 🚀
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
@@ -21,8 +22,14 @@ jobs:
           node-version: 18
       - name: Enable pnpm
         run: corepack enable
-      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
+      - name: build storybook
+        run: pnpm build-storybook
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          install_command: pnpm i
-          build_command: pnpm build-storybook
-          path: storybook-static
+          path: "./storybook-static"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

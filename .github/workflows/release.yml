@@ -1,4 +1,4 @@
-name: Design System Release
+name: Component Library Release
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "allow github actions to use this repo code"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: "Setup node"
         uses: actions/setup-node@v4
         with:

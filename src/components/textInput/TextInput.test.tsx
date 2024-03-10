@@ -7,12 +7,17 @@ describe("Testing <TextInput /> Component", () => {
     cleanup();
   });
 
-  test("TextInpu should be on screen", () => {
-    render(
-      <TextInput.Root>
-        <TextInput.Input />
-      </TextInput.Root>
-    );
+  test("TextInput should be wrapped screen", () => {
+    render(<TextInput.Input />, {
+      wrapper: TextInput.Root,
+    });
+
+    const inputWrapper = screen.getByTestId("text-input-root");
+    expect(inputWrapper).toBeDefined();
+  });
+
+  test("TextInput should be on screen", () => {
+    render(<TextInput.Input />);
 
     const input = screen.getByRole("textbox");
     expect(input).toBeDefined();

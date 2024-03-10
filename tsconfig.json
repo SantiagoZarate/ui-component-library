@@ -21,7 +21,8 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@icon": ["./src/components/icons/index.tsx"]
+      "@icon": ["./src/components/icons/index.tsx"],
+      "@component/*": ["./src/components/*"]
     }
   },
   "include": ["src"],

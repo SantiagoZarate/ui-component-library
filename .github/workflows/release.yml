@@ -1,23 +1,10 @@
-name: Component Library Release
+name: Build and Publish storybook to GitHub Pages
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
     branches:
       - master
 jobs:
-  testing:
-    name: "Testing my library component library 🧪"
-    runs-on: ubuntu-latest
-    steps:
-      - name: "allow github actions to use this repo code"
-        uses: actions/checkout@v4
-      - name: "Setup node"
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-      - run: corepack enable
-      - run: pnpm i
-      - run: pnpm test
   deploy:
     name: "Release storybook preview ⚛"
     runs-on: ubuntu-latest
@@ -28,17 +15,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-
       - name: Enable corepack so pnpm is able to use
         run: corepack enable
-
-      - name: Install dependencies
-        run: pnpm i
-
-      - name: Run storybook build
-        run: pnpm build-storybook
-
-      - name: Deploy storybook
-        run: pnpm run deploy-storybook -- --ci --existing-output-dir=storybook-static
-        env:
-          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
+        with:
+          install_command: pnpm install
+          build_command: pnpm build-storybook
+          path: storybook-static

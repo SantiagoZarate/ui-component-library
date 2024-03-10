@@ -1,9 +1,13 @@
 name: Build and Publish storybook to GitHub Pages
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} is testing the ui library 🧪
 on:
   push:
     branches:
       - master
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 jobs:
   deploy:
     name: "Release storybook preview ⚛"

@@ -1,0 +1,15 @@
+import{j as k}from"./jsx-runtime-CKrituN3.js";import"./index-CBqU2yxZ.js";import"./_commonjsHelpers-BosuxZz1.js";function C(r){var t,e,a="";if(typeof r=="string"||typeof r=="number")a+=r;else if(typeof r=="object")if(Array.isArray(r))for(t=0;t<r.length;t++)r[t]&&(e=C(r[t]))&&(a&&(a+=" "),a+=e);else for(t in r)r[t]&&(a&&(a+=" "),a+=t);return a}function E(){for(var r,t,e=0,a="";e<arguments.length;)(r=arguments[e++])&&(t=C(r))&&(a&&(a+=" "),a+=t);return a}const v=r=>typeof r=="boolean"?"".concat(r):r===0?"0":r,b=E,q=(r,t)=>e=>{var a;if((t==null?void 0:t.variants)==null)return b(r,e==null?void 0:e.class,e==null?void 0:e.className);const{variants:g,defaultVariants:o}=t,O=Object.keys(g).map(n=>{const s=e==null?void 0:e[n],l=o==null?void 0:o[n];if(s===null)return null;const i=v(s)||v(l);return g[n][i]}),f=e&&Object.entries(e).reduce((n,s)=>{let[l,i]=s;return i===void 0||(n[l]=i),n},{}),A=t==null||(a=t.compoundVariants)===null||a===void 0?void 0:a.reduce((n,s)=>{let{class:l,className:i,...P}=s;return Object.entries(P).every(T=>{let[p,m]=T;return Array.isArray(m)?m.includes({...o,...f}[p]):{...o,...f}[p]===m})?[...n,l,i]:n},[]);return b(r,O,A,e==null?void 0:e.class,e==null?void 0:e.className)},w=q(`
+  rounded-full px-4 py-2 uppercase font-bold flex items-center gap-2 w-fit
+  `,{variants:{intent:{primary:"bg-green-200 text-green-500",secondary:"outline-1 outline outline-green-500 text-green-500",terciary:"bg-green-200/50 bg-green-400"},size:{regular:"text-sm",big:"text-base",small:"text-xs"}},defaultVariants:{intent:"primary",size:"regular"}});function y({intent:r,size:t,className:e,...a}){return k.jsx("span",{className:w({intent:r,size:t,className:e}),...a})}try{y.displayName="Badge",y.__docgenInfo={description:"",displayName:"Badge",props:{intent:{defaultValue:null,description:"",name:"intent",required:!1,type:{name:'"primary" | "secondary" | "terciary" | null'}},size:{defaultValue:null,description:"",name:"size",required:!1,type:{name:'"big" | "small" | "regular" | null'}}}}}catch{}const U={title:"Badge",component:y,tags:["autodocs"],parameters:{layout:"centered"},args:{children:"Esto es un badge"},argTypes:{children:{table:{disable:!0}},intent:{options:["primary","secondary","terciary"]},size:{options:["big","regular","small"]}}},c={args:{intent:"primary"}},d={args:{intent:"secondary"}},u={args:{intent:"terciary"}};var x,_,N;c.parameters={...c.parameters,docs:{...(x=c.parameters)==null?void 0:x.docs,source:{originalSource:`{
+  args: {
+    intent: "primary"
+  }
+}`,...(N=(_=c.parameters)==null?void 0:_.docs)==null?void 0:N.source}}};var V,j,S;d.parameters={...d.parameters,docs:{...(V=d.parameters)==null?void 0:V.docs,source:{originalSource:`{
+  args: {
+    intent: "secondary"
+  }
+}`,...(S=(j=d.parameters)==null?void 0:j.docs)==null?void 0:S.source}}};var h,z,B;u.parameters={...u.parameters,docs:{...(h=u.parameters)==null?void 0:h.docs,source:{originalSource:`{
+  args: {
+    intent: "terciary"
+  }
+}`,...(B=(z=u.parameters)==null?void 0:z.docs)==null?void 0:B.source}}};const W=["Primary","Secondary","Terciary"];export{c as Primary,d as Secondary,u as Terciary,W as __namedExportsOrder,U as default};

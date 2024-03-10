@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "sb": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "deploy-storybook": "storybook-to-ghpages",
     "prepare": "husky",
     "lint:staged": "lint-staged",
     "test": "vitest --run"
@@ -31,6 +32,7 @@
     "@storybook/blocks": "^7.6.17",
     "@storybook/react": "^7.6.17",
     "@storybook/react-vite": "^7.6.17",
+    "@storybook/storybook-deployer": "2.8.16",
     "@storybook/test": "^7.6.17",
     "@testing-library/user-event": "14.5.2",
     "@types/node": "20.11.24",

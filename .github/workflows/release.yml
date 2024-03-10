@@ -18,3 +18,21 @@ jobs:
       - run: corepack enable
       - run: pnpm i
       - run: pnpm test
+  deploy:
+    name: "Release storybook preview ⚛"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "allow github actions to use this repo code"
+        uses: actions/checkout@v4
+      - name: "Setup node"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Run storybook build
+        run: pnpm build-storybook
+
+      - name: Deploy storybook
+        run: pnpm run deploy-storybook -- --ci --existing-output-dir=storybook-static
